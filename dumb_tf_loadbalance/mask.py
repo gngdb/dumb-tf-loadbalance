@@ -12,10 +12,8 @@ def choose_gpu():
         device_handle = nvmlDeviceGetHandleByIndex(gpu_index)
         meminfo = nvmlDeviceGetMemoryInfo(device_handle)
         gpu_memusage.append(float(meminfo.used)/float(meminfo.total))
-        print gpu_memusage
         if gpu_memusage[-1] < gpu_memusage[mostfree_index]:
             mostfree_index = gpu_index
-    print "Choosing gpu:", str(mostfree_index)
     os.environ['CUDA_VISIBLE_DEVICES'] = str(mostfree_index)
     nvmlShutdown()
     return None
