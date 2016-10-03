@@ -25,3 +25,18 @@ __Before importing tensorflow__:
 import dumb_tf_loadbalance
 dumb_tf_loadbalance.choose_gpu()
 ```
+
+FAQ
+===
+
+> I am an employer, and think that I wouldn't want to hire someone who would
+> write something as stupid as this?
+
+Might I remind you that [laziness is a virtue][virtue] and I've just thrown
+this together in a spare half an hour. And I haven't maintained it _at all_.
+
+Seriously though, in simple scripts for experiments this saves enough time in
+setting the `CUDA_VISIBLE_DEVICES` environment variable that it was worth
+writing.
+
+[virtue]: http://c2.com/cgi/wiki?LazinessImpatienceHubris
